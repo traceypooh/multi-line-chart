@@ -7,8 +7,8 @@ window.$ = $
 const log = console.log.bind(console)
 
 
-const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree AND year:[1995 TO 2100]&fl[]=creator&fl[]=year&output=json&rows=250000'
-
+// const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree AND year:[1995 TO 2100]&fl[]=creator&fl[]=year&output=json&rows=250000'
+const JSON = 'cached.json'
 
 
 $('body')
@@ -49,8 +49,8 @@ $('div').html(LineChart(xyz, {
   x: (e) => e.x,
   y: (e) => e.y,
   z: (e) => e.z,
-  yLabel: "↑ archive.org band recordings per year",
+  yLabel: '↑ archive.org band recordings per year',
   width: $(document).width(),
   height: 500,
-  color: "steelblue",
+  color: 'steelblue',
 }))
