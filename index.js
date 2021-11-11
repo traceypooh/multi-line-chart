@@ -8,7 +8,10 @@ window.$ = $
 const log = console.log.bind(console)
 
 
-const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree&fl[]=creator&fl[]=year&output=json&rows=250000'
+const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree&fl[]=creator&fl[]=date&output=json&rows=250000'
+
+$('body').append('<h1>archive concerts</h1>')
+
 
 const json = (await (await fetch(JSON)).json())?.response?.docs
 log(json[0])
@@ -21,19 +24,25 @@ log({n})
 const pops = Object.fromEntries(Object.entries(n).sort((a,b) => b[1] - a[1]).slice(0, 50))
 log({pops})
 
-const shows_per_year = {}
+const shows_per_month = {}
 for (const e of json) {
-  shows_per_year[e.creator] = shows_per_year[e.creator] || {}
-  shows_per_year[e.creator][e.year] = 1 + (shows_per_year[e.creator][e.year] ?? 0)
+  try {
+    const month = new Date(e.date)?.toISOString()?.slice(0, 7)
+    if (month) {
+      shows_per_month[e.creator] = shows_per_month[e.creator] || {}
+      shows_per_month[e.creator][month] = 1 + (shows_per_month[e.creator][month] ?? 0)
+    }
+  } catch {}
 }
-log({shows_per_year})
+log({shows_per_month})
 
 const xyz = []
-for (const [band, year2n] of Object.entries(shows_per_year)) {
-  for (const [year, n] of Object.entries(year2n)) {
+for (const [band, month2n] of Object.entries(shows_per_month)) {
+  if (band === 'Desert Rain') log({month2n}, Object.keys(month2n).sort())
+  for (const month of Object.keys(month2n).sort()) {
     xyz.push({
-      x: new Date(year).getTime(),
-      y: shows_per_year[band][year],
+      x: new Date(month).getTime(),
+      y: month2n[month],
       z: band,
     })
   }
@@ -44,7 +53,7 @@ $('body').append(LineChart(xyz, {
   x: (e) => e.x,
   y: (e) => e.y,
   z: (e) => e.z,
-  yLabel: "↑ archive.org band recordings per year",
+  yLabel: "↑ archive.org band recordings per month",
   width: $(document).width(),
   height: 500,
   color: "steelblue",
