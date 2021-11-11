@@ -13,7 +13,17 @@ const JSON = 'cached.json'
 
 $('body')
   .css('padding', 25)
-  .append('<h1>archive concerts</h1><div><img src="https://archive.org/images/loading.gif"></div>')
+  .append(`
+    <h1>archive concerts</h1>
+    <div id="loading">
+      <img src="https://archive.org/images/loading.gif">
+    </div>
+    <div class="card card-body bg-light">
+      source:
+      <a href="https://github.com/traceypooh/multi-line-chart">
+        https://github.com/traceypooh/multi-line-chart
+      </a>
+    </div>`)
 
 const json = (await (await fetch(JSON)).json())?.response?.docs
 log(json[0])
@@ -45,7 +55,7 @@ for (const [band, year2n] of Object.entries(shows_per_year)) {
 }
 log({xyz})
 
-$('div').html(LineChart(xyz, {
+$('#loading').html(LineChart(xyz, {
   x: (e) => e.x,
   y: (e) => e.y,
   z: (e) => e.z,
