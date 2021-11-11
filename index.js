@@ -1,4 +1,3 @@
-
 import * as d3 from 'https://esm.archive.org/d3'
 import $ from 'https://esm.archive.org/jquery'
 import LineChart from './multi-line-chart.js'
@@ -8,7 +7,13 @@ window.$ = $
 const log = console.log.bind(console)
 
 
-const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree&fl[]=creator&fl[]=year&output=json&rows=250000'
+const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree AND year:[1995 TO 2100]&fl[]=creator&fl[]=year&output=json&rows=250000'
+
+
+
+$('body')
+  .css('padding', 25)
+  .append('<h1>archive concerts</h1><div><img src="https://archive.org/images/loading.gif"></div>')
 
 const json = (await (await fetch(JSON)).json())?.response?.docs
 log(json[0])
@@ -40,7 +45,7 @@ for (const [band, year2n] of Object.entries(shows_per_year)) {
 }
 log({xyz})
 
-$('body').append(LineChart(xyz, {
+$('div').html(LineChart(xyz, {
   x: (e) => e.x,
   y: (e) => e.y,
   z: (e) => e.z,
