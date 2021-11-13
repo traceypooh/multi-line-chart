@@ -1,9 +1,9 @@
-# D3-based multi-line chart demo
+# “How a Denosaur 🦕 is making it so Everyone Can Code” (JS + Deno & democratizing coding)
 
 [Aaron Swartz Day 2021](https://www.aaronswartzday.org/asd-2021/)
 coding talk.
 
-# Anyone can learn to code!
+## Anyone can learn to code!
 
 Here we'll show:
 - fetch data
@@ -21,6 +21,7 @@ Demo live at: https://traceypooh.github.io/multi-line-chart/
 
 
 ## Key Points
+
 - can load page entirely locally
   - `open index.html` in _safari_ :)
 
@@ -32,3 +33,15 @@ Demo live at: https://traceypooh.github.io/multi-line-chart/
   - https://esm.archive.org
     - no tracking
     - JS, CSS, imagery
+
+
+## Back-end JS 🦕
+
+- https://deno.land
+- made by creator of `node`
+- most browser code works in backend
+- web standards like `fetch()` and `URL`
+- can `import` from any url
+  - GitHub / GitLab
+  - personal webserver
+  - CDNs like Skypack, esm.sh
