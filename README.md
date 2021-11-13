@@ -26,6 +26,9 @@ this code is live at: https://traceypooh.github.io/multi-line-chart/
 
 - can load page entirely locally
   - `open index.html` in _safari_ :)
+    - [Preferences] [Advanced] Show Develop menu in menu bar ✅
+    - During dev:
+      - [Develop] Disable Local File Restrictions ✅
 
 - Content Delivery Network (CDN)
   - `import` JS directly (without `npm`, `node` or `node_modules`)
