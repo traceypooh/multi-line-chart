@@ -3,7 +3,14 @@ import $ from 'https://esm.archive.org/jquery'
 import LineChart from './multi-line-chart.js'
 window.d3 = d3
 
-const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree AND year:[1995 TO 2100]&fl[]=creator&fl[]=year&output=json&rows=2500'
+const JSON = [
+  'https://archive.org/advancedsearch.php?',
+  'q=mediatype:etree AND year:[1995 TO 2100]',
+  'fl[]=creator',
+  'fl[]=year',
+  'output=json',
+  'rows=2500',
+].join('&')
 
 const json = (await (await fetch(JSON)).json()).response?.docs
 

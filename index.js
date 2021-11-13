@@ -6,8 +6,17 @@ window.d3 = d3
 const log = console.log.bind(console)
 
 
-// const JSON = 'https://archive.org/advancedsearch.php?q=mediatype:etree AND year:[1995 TO 2100]&fl[]=creator&fl[]=year&output=json&rows=250000'
-const JSON = 'cached.json'
+let JSON = [
+  'https://archive.org/advancedsearch.php?',
+  'q=mediatype:etree AND year:[1995 TO 2100]',
+  'fl[]=creator',
+  'fl[]=year',
+  'output=json',
+  'rows=250000',
+].join('&')
+
+// uncomment this to use the above url already saved in this project (for faster loading :)
+JSON = 'cached.json'
 
 
 $('body')
