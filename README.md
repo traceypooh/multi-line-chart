@@ -20,12 +20,15 @@ Demo live at: https://traceypooh.github.io/multi-line-chart/
 (can take awhile to load data from https://archive.org ...)
 
 
-## Key Ppoints
+## Key Points
 - can load page entirely locally
   - `open index.html` in _safari_ :)
 
 - Content Delivery Network (CDN)
   - `import` JS directly (without `npm`, `node` or `node_modules`)
+  - https://www.skypack.dev/
+  - https://esm.sh/
+
   - https://esm.archive.org
     - no tracking
     - JS, CSS, imagery
