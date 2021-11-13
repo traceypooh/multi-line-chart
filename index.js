@@ -3,7 +3,6 @@ import $ from 'https://esm.archive.org/jquery'
 import LineChart from './multi-line-chart.js'
 
 window.d3 = d3
-window.$ = $
 const log = console.log.bind(console)
 
 
