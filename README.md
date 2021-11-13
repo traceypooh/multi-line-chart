@@ -1,4 +1,4 @@
-# “How a Denosaur 🦕 is making it so Everyone Can Code” (JS + Deno & democratizing coding)
+# How a Denosaur 🦕 is making it so Everyone Can Code
 
 [Aaron Swartz Day 2021](https://www.aaronswartzday.org/asd-2021/)
 coding talk.
@@ -13,10 +13,12 @@ Here we'll show:
 All with a single JS file, hosted anywhere, browser debuggable, etc.
 
 
-Graphing from: https://observablehq.com/@d3/multi-line-chart
+JS graph code from: https://observablehq.com/@d3/multi-line-chart
   - (it wasn't ever published to `npm`)
 
-Demo live at: https://traceypooh.github.io/multi-line-chart/
+## Demo
+this code is live at: https://traceypooh.github.io/multi-line-chart/
+
 (can take awhile to load data from https://archive.org ...)
 
 
