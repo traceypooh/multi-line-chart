@@ -24,8 +24,10 @@ const pops = Object.fromEntries(Object.entries(n).sort((a,b) => b[1] - a[1]).sli
 
 const shows_per_year = {}
 for (const e of json) {
-  shows_per_year[e.creator] = shows_per_year[e.creator] || {}
-  shows_per_year[e.creator][e.year] = 1 + (shows_per_year[e.creator][e.year] ?? 0)
+  if (pops[e.creator]) {
+    shows_per_year[e.creator] = shows_per_year[e.creator] || {}
+    shows_per_year[e.creator][e.year] = 1 + (shows_per_year[e.creator][e.year] ?? 0)
+  }
 }
 
 const xyz = []
@@ -33,7 +35,7 @@ for (const [band, year2n] of Object.entries(shows_per_year)) {
   for (const [year, n] of Object.entries(year2n)) {
     xyz.push([
       new Date(year).getTime(),
-      shows_per_year[band][year],
+      n,
       band,
     ])
   }

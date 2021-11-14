@@ -46,8 +46,10 @@ log({pops})
 
 const shows_per_year = {}
 for (const e of json) {
-  shows_per_year[e.creator] = shows_per_year[e.creator] || {}
-  shows_per_year[e.creator][e.year] = 1 + (shows_per_year[e.creator][e.year] ?? 0)
+  if (pops[e.creator]) {
+    shows_per_year[e.creator] = shows_per_year[e.creator] || {}
+    shows_per_year[e.creator][e.year] = 1 + (shows_per_year[e.creator][e.year] ?? 0)
+  }
 }
 log({shows_per_year})
 
@@ -56,7 +58,7 @@ for (const [band, year2n] of Object.entries(shows_per_year)) {
   for (const [year, n] of Object.entries(year2n)) {
     xyz.push({
       x: new Date(year).getTime(),
-      y: shows_per_year[band][year],
+      y: n,
       z: band,
     })
   }
