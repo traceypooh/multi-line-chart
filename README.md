@@ -3,6 +3,16 @@
 [Aaron Swartz Day 2021](https://www.aaronswartzday.org/asd-2021/)
 coding talk.
 
+## Abstract
+Aaron Swartz wanted to democratize everything - and put power in the hands of everyone instead of the hands of the few with the most power.  Coding has become a critical skill these days.  Traditionally, there's a lot of setup to even create a basic "hello world" website, in any language.
+
+With the advent of Static Site Generators, popular for blogs, and free hosting on github or gitlab pages, how can we leverage that pattern with modern JavaScript?
+
+Tracey will show and live code a single JS file that does a fun graph visualization of archive.org live concerts, and how anyone can code like this with zero setup or requirements.
+
+## Video
+https://youtu.be/LAL5js2vl0E?t=5192
+
 ## Anyone can learn to code!
 
 Here we'll show:
