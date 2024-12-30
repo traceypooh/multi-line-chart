@@ -45,7 +45,7 @@ this code is live at: https://traceypooh.github.io/multi-line-chart/
   - https://www.skypack.dev/
   - https://esm.sh/
 
-  - https://esm.archive.org
+  - https://esm.ext.archive.org
     - no tracking
     - JS, CSS, imagery
 

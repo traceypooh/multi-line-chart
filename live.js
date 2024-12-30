@@ -1,5 +1,5 @@
-import * as d3 from 'https://esm.archive.org/d3'
-import $ from 'https://esm.archive.org/jquery'
+import * as d3 from 'https://esm.ext.archive.org/d3@7.9.0'
+import $ from 'https://esm.ext.archive.org/jquery@3.7.1'
 import LineChart from './multi-line-chart.js'
 window.d3 = d3
 
